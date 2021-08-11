@@ -1,0 +1,7 @@
+pip\_services3\_memcached.lock.MemcachedLock module
+===================================================
+
+.. automodule:: pip_services3_memcached.lock.MemcachedLock
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,18 @@
+pip\_services3\_memcached.build package
+=======================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pip_services3_memcached.build.DefaultMemcachedFactory
+
+Module contents
+---------------
+
+.. automodule:: pip_services3_memcached.build
+   :members:
+   :undoc-members:
+   :show-inheritance:

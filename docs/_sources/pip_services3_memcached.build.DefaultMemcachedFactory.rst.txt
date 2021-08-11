@@ -1,0 +1,7 @@
+pip\_services3\_memcached.build.DefaultMemcachedFactory module
+==============================================================
+
+.. automodule:: pip_services3_memcached.build.DefaultMemcachedFactory
+   :members:
+   :undoc-members:
+   :show-inheritance:

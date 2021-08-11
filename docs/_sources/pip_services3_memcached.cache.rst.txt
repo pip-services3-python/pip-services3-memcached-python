@@ -1,0 +1,18 @@
+pip\_services3\_memcached.cache package
+=======================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pip_services3_memcached.cache.MemcachedCache
+
+Module contents
+---------------
+
+.. automodule:: pip_services3_memcached.cache
+   :members:
+   :undoc-members:
+   :show-inheritance:

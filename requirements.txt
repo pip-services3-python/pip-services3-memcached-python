@@ -1,0 +1,5 @@
+pytest
+pymemcache
+
+pip_services3_commons
+pip_services3_components

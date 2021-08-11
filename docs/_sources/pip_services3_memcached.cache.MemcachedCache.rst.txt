@@ -1,0 +1,7 @@
+pip\_services3\_memcached.cache.MemcachedCache module
+=====================================================
+
+.. automodule:: pip_services3_memcached.cache.MemcachedCache
+   :members:
+   :undoc-members:
+   :show-inheritance:
