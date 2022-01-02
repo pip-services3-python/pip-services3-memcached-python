@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 from typing import Any, Optional, List
 
 import pymemcache
@@ -178,8 +179,8 @@ class MemcachedCache(ICache, IConfigurable, IReferenceable, IOpenable):
         :return: a cached value or `None` if nothing was found.
         """
         self.__check_opened(correlation_id)
-
-        return self.__client.get(key)
+        res = self.__client.get(key)
+        return None if not res else json.loads(res)
 
     def store(self, correlation_id: Optional[str], key: str, value: Any, timeout: int) -> Any:
         """
@@ -195,7 +196,7 @@ class MemcachedCache(ICache, IConfigurable, IReferenceable, IOpenable):
 
         timeout_in_sec = int(timeout / 1000)
 
-        return self.__client.set(key, value, timeout_in_sec)
+        return self.__client.set(key, json.dumps(value, default=str), timeout_in_sec)
 
     def remove(self, correlation_id: Optional[str], key: str):
         """
@@ -206,5 +207,7 @@ class MemcachedCache(ICache, IConfigurable, IReferenceable, IOpenable):
         :return: the deleted value.
         """
         self.__check_opened(correlation_id)
-
-        return self.__client.delete(key)
+        res = self.__client.delete(key)
+        if isinstance(res, bool):
+            return res
+        return None if not res else json.loads(res)
