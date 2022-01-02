@@ -12,8 +12,8 @@ Links
 
 """
 
-from setuptools import setup
 from setuptools import find_packages
+from setuptools import setup
 
 try:
     readme = open('readme.md').read()
@@ -22,7 +22,7 @@ except:
 
 setup(
     name='pip_services3_memcached',
-    version='3.0.0',
+    version='3.0.1',
     url='http://github.com/pip-services3-python/pip-services3-memcached-python',
     license='MIT',
     author='Conceptual Vision Consulting LLC',
@@ -35,13 +35,12 @@ setup(
     zip_safe=True,
     platforms='any',
     install_requires=[
-        'pytest',
-        'pymemcache',
-        'pip-services3-commons', 
-        'pip-services3-components',
+        'pymemcache >= 3.5.0, <=4.0',
+
+        'pip_services3_commons >= 3.3.10, <=4.0',
+        'pip_services3_components >= 3.5.4, <=4.0'
     ],
     classifiers=[
-        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
@@ -50,6 +49,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
 )

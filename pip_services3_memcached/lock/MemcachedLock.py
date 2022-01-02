@@ -74,7 +74,7 @@ class MemcachedLock(Lock, IConfigurable, IReferenceable, IOpenable):
         self.__reconnect: int = 10000
         self.__timeout: int = 5000
         self.__retries: int = 5
-        # self.__failures: int = 5
+        self.__failures: int = 5
         self.__retry: int = 30000
         # self.__remove: bool = False
         self.__idle: int = 5000
@@ -96,7 +96,7 @@ class MemcachedLock(Lock, IConfigurable, IReferenceable, IOpenable):
         self.__reconnect = config.get_as_integer_with_default('options.reconnect', self.__reconnect)
         self.__timeout = config.get_as_integer_with_default('options.timeout', self.__timeout)
         self.__retries = config.get_as_integer_with_default('options.retries', self.__retries)
-        # self.__failures = config.get_as_integer_with_default('options.failures', self.__failures)
+        self.__failures = config.get_as_integer_with_default('options.failures', self.__failures)
         self.__retry = config.get_as_integer_with_default('options.retry', self.__retry)
         # self.__remove = config.get_as_integer_with_default('options.remove', self.__remove)
         self.__idle = config.get_as_integer_with_default('options.idle', self.__idle)
@@ -138,19 +138,18 @@ class MemcachedLock(Lock, IConfigurable, IReferenceable, IOpenable):
             servers.append(f'{host}:{port}')
 
         options = {
-            # TODO: this options have not support
+            # TODO: this options have not support by driver, but can execute by cmd driver method
             # 'maxKeySize': self.__max_key_size,
             # 'maxExpiration': self.__max_expiration,
-            # 'maxValue': self.__max_value,
-            # 'failures': self.__failures,
+            # 'maxValue': self.__max_value, # driver don't have this config
+            # 'retries': self.__retries,
             # 'remove': self.__remove,
+            'retry_attempts': self.__failures,  # driver automatically remove dead servers from the pool (by attemps)
             'max_pool_size': self.__pool_size,
             'connect_timeout': self.__reconnect / 1000,
             'timeout': self.__timeout / 1000,
-            'retry_attempts': self.__retries,
             'retry_timeout': self.__retry / 1000,
             'pool_idle_timeout': self.__idle / 1000,
-
             'default_noreply': False
         }
 
