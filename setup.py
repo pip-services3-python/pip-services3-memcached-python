@@ -22,7 +22,7 @@ except:
 
 setup(
     name='pip_services3_memcached',
-    version='3.0.1',
+    version='3.0.2',
     url='http://github.com/pip-services3-python/pip-services3-memcached-python',
     license='MIT',
     author='Conceptual Vision Consulting LLC',
@@ -37,7 +37,7 @@ setup(
     install_requires=[
         'pymemcache >= 3.5.0, <=4.0',
 
-        'pip_services3_commons >= 3.3.10, <=4.0',
+        'pip_services3_commons >= 3.3.11, <=4.0',
         'pip_services3_components >= 3.5.4, <=4.0'
     ],
     classifiers=[
@@ -49,7 +49,6 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
 )

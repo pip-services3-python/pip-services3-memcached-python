@@ -195,7 +195,8 @@ class MemcachedCache(ICache, IConfigurable, IReferenceable, IOpenable):
 
         timeout_in_sec = int(timeout / 1000)
 
-        return self.__client.set(key, json.dumps(value, default=str), timeout_in_sec)
+        result = self.__client.set(key, json.dumps(value, default=str), timeout_in_sec)
+        return value if result else None
 
     def remove(self, correlation_id: Optional[str], key: str):
         """
