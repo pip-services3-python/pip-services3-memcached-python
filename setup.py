@@ -35,17 +35,16 @@ setup(
     zip_safe=True,
     platforms='any',
     install_requires=[
-        'pymemcache >= 3.5.0, <=4.0',
+        'pymemcache >= 3.5.0, < 4.0',
 
-        'pip_services3_commons >= 3.3.11, <=4.0',
-        'pip_services3_components >= 3.5.4, <=4.0'
+        'pip_services3_commons >= 3.3.11, < 4.0',
+        'pip_services3_components >= 3.5.5, < 4.0'
     ],
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
