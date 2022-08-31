@@ -1,5 +1,5 @@
 {
-    "name":  "pip_services3_memcached",
+    "name":  "pip-services3-memcached",
     "type": "module",
     "language": "python",
     "version": "3.0.2",
